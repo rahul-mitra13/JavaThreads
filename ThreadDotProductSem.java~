@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.concurrent.Semaphore;
 public class ThreadDotProduct extends Thread{
    private int lo, hi, pos;
    private int[] a, b, c;
