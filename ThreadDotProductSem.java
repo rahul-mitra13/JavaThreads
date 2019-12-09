@@ -10,6 +10,10 @@
 * size =  134217728 t = 2, time = 82 milliseconds
 * size =  134217728 t = 4, time = 77 milliseconds
 * size =  134217728 t = 8, time = 81 milliseconds
+* size =  268435456 t = 1, time = 178 milliseconds
+* size =  268435456 t = 2, time = 156 milliseconds
+* size =  268435456 t = 4, time = 144 milliseconds
+* size =  268435456 t = 8, time = 128 milliseconds
 * throws an error if I try to create 32 threads
 */
 import java.util.Random;
