@@ -1,4 +1,9 @@
 /*
+*Rahul Mitra
+*CPSC 316, Assignment 7, Part 3 - DotProduc
+*/
+/*
+* * After compilation, please run with the flag java -Xmx30G DotProduct n for very large n
 *Test Results
 * size = 100, time = 0 milliseconds
 * size = 1000, time = 0 milliseconds

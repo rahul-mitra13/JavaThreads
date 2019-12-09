@@ -1,3 +1,17 @@
+/*
+*Rahul Mitra
+*CPSC 316, Assignment 7, Part 3 - ThreadDotProductSem
+*/
+
+/*
+* After compilation, please run with the flag java -Xmx30G ThreadDotProductSem n t for very large n
+*Test Results
+* size =  134217728 t = 1, time = 93 milliseconds
+* size =  134217728 t = 2, time = 82 milliseconds
+* size =  134217728 t = 4, time = 77 milliseconds
+* size =  134217728 t = 8, time = 81 milliseconds
+* throws an error if I try to create 32 threads
+*/
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicLong;
@@ -55,11 +69,6 @@ import java.util.*;
             A[i] = rand.nextInt(10);
             B[i] = rand.nextInt(10);
         }
-        int dot2 = 0;
-        for ( int i = 0; i < size; i++){
-           dot2 += A[i]*B[i];
-        }
-        System.out.println("Actual dot product = "+dot2);
         long start = System.nanoTime();
         dot(A, B, numthreads, sem);
         long end = System.nanoTime();

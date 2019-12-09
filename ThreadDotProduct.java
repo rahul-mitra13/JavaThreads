@@ -1,4 +1,9 @@
 /*
+*Rahul Mitra
+*CPSC 316, Assignment 7, Part 3 - ThreadDotProduct
+*/
+/*
+* After compilation, please run with the flag java -Xmx30G ThreadDotProduct n t for very large n
 *Test Results
 * size =  134217728 t = 1, time = 88 milliseconds
 * size =  134217728 t = 2, time = 80 milliseconds
