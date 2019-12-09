@@ -54,6 +54,11 @@ public class ThreadDotProduct extends Thread{
             A[i] = rand.nextInt();
             B[i] = rand.nextInt();
         }
+        int dot2 = 0;
+        for ( int i = 0; i < size; i++){
+           dot2 += A[i]*B[i];
+        }
+        System.out.println("Actual dot product ="+dot2);
         long start = System.nanoTime();
         dot(A, B, C, numthreads);
         for (int i = 0; i < numthreads; i++){
