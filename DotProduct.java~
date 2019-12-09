@@ -7,8 +7,8 @@
 * size = 1000000, time = 4 milliseconds
 * size = 10000000, time = 9 milliseconds
 * size = 100000000, time = 45 milliseconds
-* size = 1000000000, time = Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at DotProduct.main(DotProduct.java:7)
+* size = 134217728, time = 92 milliseconds
+* size = 536870912, time = 395 milliseconds
 */
 import java.util.Random;
 public class DotProduct{
@@ -28,7 +28,6 @@ public class DotProduct{
     for ( int i = 0 ; i < size; i++){
       dot += vec1[i] * vec2[i];
     }
-
     long end = System.nanoTime();
     long elapsed = (end - start) / 1000000; // in milliseconds
     System.out.println("The dot product = " +  dot);
