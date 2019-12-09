@@ -3,10 +3,10 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.*;
    public class ThreadDotProductSem extends Thread{
-   private static int lo, hi, i;
+   private int lo, hi, i;
    private int[] a, b;
    private Semaphore sem;
-   private int localsum = 0;
+   private long localsum = 0;
    static AtomicLong sum = new AtomicLong(0);
    public ThreadDotProductSem(int[] a, int[] b, int lo, int hi, Semaphore sem, int i){
         this.a = a;
@@ -18,12 +18,9 @@ import java.util.*;
     }
     public void run() {
       localsum = 0;
-      System.out.println("This is low and i is = "+lo+" "+i);
-      System.out.println("This is hi and i is = "+hi+" "+i);
       for (int i = lo; i < hi; i++) {
             localsum += a[i] * b[i];
         }
-      System.out.println("This is the local sum = "+localsum);
       try{
           sem.acquire();
           sum.addAndGet(localsum);
@@ -38,7 +35,6 @@ import java.util.*;
          
         ThreadDotProductSem[] mythread = new ThreadDotProductSem[numthreads];
         for (int i = 0; i < numthreads; i++) {
-            System.out.println("This is i = " + i);
             mythread[i] = new ThreadDotProductSem(a, b,(i*len)/numthreads, ((i+1)*len)/numthreads, sem, i);
             mythread[i].start();
         }
